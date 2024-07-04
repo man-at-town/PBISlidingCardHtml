@@ -1,0 +1,217 @@
+<html>
+<head>
+    <style>
+        body {
+            height: 100vh;
+            background: #e0e5ec;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .outercontainer {
+            display: flex;
+            flex-direction: row;
+            gap: 20px;
+        }
+        .card {
+            display: flex;
+            flex-direction: row;
+            gap: 20px;
+            align-items: center;
+            justify-content: center;
+            transition: 0.3s;
+        }
+        .box1, .box2, .leftbox {
+            background: #e0e5ec;
+            border-radius: 20px;
+            box-shadow: 9px 9px 16px #a3b1c6, -9px -9px 16px #ffffff;
+            transition: 0.3s ease-in-out;
+        }
+        .box{
+          box-shadow: none;
+        }
+        .box1 {
+            height: 100px;
+            width: 250px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: row;
+        }
+        .box2 {
+            position: absolute;
+            display: flex;
+            flex-direction: row;
+            justify-content: left;
+            height: 120px;
+            width: 230px;
+            z-index: -1;
+        }
+        .leftbox {
+            height: 120px;
+            width: 45px;
+            display: flex;
+            align-items: center;
+        }
+        .text1 { font-size: 25px; }
+        .text2 { font-size: 35px; }
+        .text11 { font-size: 15px; }
+        .text22 { font-size: 20px; }
+        .icon { font-size: 70px; }
+        .textcont2 { padding-top: 25px; color: rgb(246, 252, 252, 0); }
+        .textbox { padding-left: 15px; }
+        .icon2 { font-size: 35px; color: darkgreen; padding-left: 5px; }
+        .textcontcollap { visibility: hidden; opacity: 0; transition: visibility 0s, width 0.5s linear; width: 0; }
+        .varkpitit { display: flex; flex-direction: row; }
+        .indic { padding-left: 10px; }
+        .up { color: green; }
+        .down { color: red; }
+
+        /* Hovering property */
+        .box1:hover {
+            transform: scale(1.1);
+            box-shadow: 9px 9px 16px #a3b1c6, -9px -9px 16px #ffffff;
+            background-color: #e9dba0;
+        }
+        .card:hover .box2 {
+            background-color: #eeeded;
+            transform: translateY(90px);
+            color: darkslategray;
+        }
+        .card:hover .leftbox {
+            background-color: rgb(160, 250, 160);
+            color: darkslategray;
+        }
+        .card:hover .textcont2 { color: darkslategray; }
+        .card:hover .bfhover {
+            visibility: hidden;
+            opacity: 0;
+            transition: visibility 0.7s, width 0s linear;
+            width: 0;
+        }
+        .card:hover .textcontcollap {
+            visibility: visible;
+            opacity: 1;
+            transition: visibility 0.7s, width 0s, opacity 1.5s linear;
+            width: auto;
+        }
+        .card:not(:hover) .bfhover {
+            visibility: visible;
+            opacity: 1;
+            width: auto;
+        }
+        .card:not(:hover) .textcontcollap {
+            visibility: hidden;
+            opacity: 0;
+            width: 0;
+        }
+        .outercontainer:hover > .card:not(:hover) {
+            transform: scale(0.9);
+        }
+    </style>
+    <script src="https://kit.fontawesome.com/12463c2e33.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="outercontainer">
+        <div class="container1 box card">
+            <div class="box1 box">
+                <div class="bfhover box1 box">
+                    <span class="fa-solid fa-sack-dollar icon"></span>
+                    <div class="textcont textbox box">
+                        <div class="text1">Net Sales</div>
+                        <div class="text2">$5.0M</div>
+                    </div>
+                </div>
+                <div class="textcontcollap textbox box">
+                    <div class="text1">Net Sales</div>
+                    <div class="text2">$5,000,000</div>
+                </div>
+            </div>
+            <div class="box2 box">
+                <div class="leftbox box">
+                    <i class="fa-regular fa-thumbs-up icon2 box"></i>
+                </div>
+                <div class="textcont2 box textbox">
+                    <div class="top varkpitit">
+                        <div class="text11">PY Variance</div>
+                        <div class="up indic">▲</div>
+                    </div>
+                    <div class="text22">$2,500,000 50%</div>
+                    <div class="bottom varkpitit">
+                        <div class="text11">Budget Variance</div>
+                        <div class="down indic">▼</div>
+                    </div>
+                    <div class="text22">$3,750,000 75%</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container2 box card">
+            <div class="box1 box">
+                <div class="bfhover box1 box">
+                    <span class="fa-solid fa-sack-dollar icon"></span>
+                    <div class="textcont textbox box">
+                        <div class="text1">Net Sales</div>
+                        <div class="text2">$5.0M</div>
+                    </div>
+                </div>
+                <div class="textcontcollap textbox box">
+                    <div class="text1">Net Sales</div>
+                    <div class="text2">$5,000,000</div>
+                </div>
+            </div>
+            <div class="box2 box">
+                <div class="leftbox box">
+                    <i class="fa-regular fa-thumbs-up icon2 box"></i>
+                </div>
+                <div class="textcont2 box textbox">
+                    <div class="top varkpitit">
+                        <div class="text11">PY Variance</div>
+                        <div class="up indic">▲</div>
+                    </div>
+                    <div class="text22">$2,500,000 50%</div>
+                    <div class="bottom varkpitit">
+                        <div class="text11">Budget Variance</div>
+                        <div class="down indic">▼</div>
+                    </div>
+                    <div class="text22">$3,750,000 75%</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container3 box card">
+            <div class="box1 box">
+                <div class="bfhover box1 box">
+                    <span class="fa-solid fa-sack-dollar icon"></span>
+                    <div class="textcont textbox box">
+                        <div class="text1">Net Sales</div>
+                        <div class="text2">$5.0M</div>
+                    </div>
+                </div>
+                <div class="textcontcollap textbox box">
+                    <div class="text1">Net Sales</div>
+                    <div class="text2">$5,000,000</div>
+                </div>
+            </div>
+            <div class="box2 box">
+                <div class="leftbox box">
+                    <i class="fa-regular fa-thumbs-up icon2 box"></i>
+                </div>
+                <div class="textcont2 box textbox">
+                    <div class="top varkpitit">
+                        <div class="text11">PY Variance</div>
+                        <div class="up indic">▲</div>
+                    </div>
+                    <div class="text22">$2,500,000 50%</div>
+                    <div class="bottom varkpitit">
+                        <div class="text11">Budget Variance</div>
+                        <div class="down indic">▼</div>
+                    </div>
+                    <div class="text22">$3,750,000 75%</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
